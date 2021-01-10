@@ -1,0 +1,8 @@
+---
+applications:
+- name: servicio-sidd
+  path: target/servicio-sidd-0.1.jar
+  memory: 1024M
+  instances: 1
+  random-route: true
+  health-check-type: process
