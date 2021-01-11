@@ -34,4 +34,10 @@ public class PersonaController {
 		Persona persona = personaService.findById(id);
 		return persona;
 	}
+        
+        @GetMapping("/buscar/{nroDocumento}")
+	public Persona detalle(@PathVariable String nroDocumento) {
+		Persona persona = personaService.findByNroDocumento(nroDocumento);
+		return persona;
+	}
 }

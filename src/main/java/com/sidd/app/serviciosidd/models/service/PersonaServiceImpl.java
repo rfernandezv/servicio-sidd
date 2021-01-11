@@ -17,14 +17,20 @@ public class PersonaServiceImpl implements IPersonaService {
 	private PersonaDao personaDao;
 	
 	@Override
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<Persona> findAll() {
 		return (List<Persona>) personaDao.findAll();
 	}
 
 	@Override
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public Persona findById(Long id) {
-		return personaDao.findById(id).orElse(null);
+		return personaDao.getOne(id);
+	}
+        
+        @Override
+	//@Transactional(readOnly = true)
+	public Persona findByNroDocumento(String nroDocumento) {
+		return personaDao.findByNroDocumento(nroDocumento);
 	}
 }

@@ -1,10 +1,13 @@
 package com.sidd.app.serviciosidd.models.dao;
 
-import org.springframework.data.repository.CrudRepository;
 import com.sidd.app.serviciosidd.models.entity.Persona;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-
-
-public interface PersonaDao extends CrudRepository<Persona, Long>{
-
+@Repository
+public interface PersonaDao extends JpaRepository<Persona, Long>{
+        public List<Persona> findAll();
+	//public Persona findById(Long Id);
+        public Persona findByNroDocumento(String nroDocumento);
 }
