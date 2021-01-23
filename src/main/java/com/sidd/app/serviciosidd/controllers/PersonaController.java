@@ -40,4 +40,30 @@ public class PersonaController {
 		Persona persona = personaService.findByNroDocumento(nroDocumento);
 		return persona;
 	}
+        
+        @GetMapping("/habilita/{nroDocumento}")
+	public boolean habilita(@PathVariable String nroDocumento) {
+            try {
+                Persona persona = personaService.findByNroDocumento(nroDocumento);
+                persona.setHabilitadoExamen("S");
+		personaService.save(persona);                
+                
+            } catch (Exception e) {
+                return false;
+            }
+            return true;
+	}
+        
+        @GetMapping("/deshabilita/{nroDocumento}")
+	public boolean deshabilita(@PathVariable String nroDocumento) {
+            try {
+                Persona persona = personaService.findByNroDocumento(nroDocumento);
+                persona.setHabilitadoExamen("N");
+		personaService.save(persona);                
+                
+            } catch (Exception e) {
+                return false;
+            }
+            return true;
+	}
 }

@@ -8,6 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface PersonaDao extends JpaRepository<Persona, Long>{
         public List<Persona> findAll();
-	//public Persona findById(Long Id);
         public Persona findByNroDocumento(String nroDocumento);
 }

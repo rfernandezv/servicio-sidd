@@ -5,4 +5,3 @@ applications:
   buildpack: 'https://github.com/cloudfoundry/java-buildpack#v4.35'
   memory: 1024M
   instances: 1
-  random-route: true

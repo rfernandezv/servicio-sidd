@@ -33,4 +33,9 @@ public class PersonaServiceImpl implements IPersonaService {
 	public Persona findByNroDocumento(String nroDocumento) {
 		return personaDao.findByNroDocumento(nroDocumento);
 	}
+        
+        @Override
+	public void save(Persona persona) {
+            personaDao.save(persona);
+	}
 }

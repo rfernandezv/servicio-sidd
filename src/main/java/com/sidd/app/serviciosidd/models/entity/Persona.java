@@ -38,6 +38,9 @@ public class Persona {
 	
 	@Column(name = "activo")
 	private Integer activo;
+        
+        @Column(name = "habilitado_examen")
+	private String habilitadoExamen;
 	
 	@Column(name = "aud_fecha")
 	@Temporal(TemporalType.DATE)
@@ -126,6 +129,14 @@ public class Persona {
 	public void setAudNumIp(String audNumIp) {
 		this.audNumIp = audNumIp;
 	}
-	
+
+        public String getHabilitadoExamen() {
+            return habilitadoExamen;
+        }
+
+        public void setHabilitadoExamen(String habilitadoExamen) {
+            this.habilitadoExamen = habilitadoExamen;
+        }
+
 	
 }

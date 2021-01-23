@@ -1,2 +1,12 @@
-INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo) VALUES('47288664', 'Richar Marvin', 'Fernandez Vilchez','Taurus', 'RCX101', '12', 1);
-INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo) VALUES('42883590', 'Adaia', 'Silvera Ortiz', 'Remington', 'SANC41', 10, 1);
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('47288664', 'Richar Marvin', 'Fernandez Vilchez','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('42883590', 'Adaia', 'Silvera Ortiz', 'Remington', 'SANC41', 10, 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111101', 'Nombres 1', 'Apellidos 1', 'Remington', 'SANC41', 10, 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111102', 'Nombres 2', 'Apellidos 2','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111103', 'Nombres 3', 'Apellidos 3','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111104', 'Nombres 4', 'Apellidos 4','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111105', 'Nombres 5', 'Apellidos 5','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111106', 'Nombres 6', 'Apellidos 6','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111107', 'Nombres 7', 'Apellidos 7','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111108', 'Nombres 8', 'Apellidos 8','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111109', 'Nombres 9', 'Apellidos 9','Taurus', 'RCX101', '12', 1, 'S');
+INSERT INTO persona (nro_documento, nombres, apellidos, marca, modelo, calibre, activo, habilitado_examen) VALUES('11111110', 'Nombres 10', 'Apellidos 10','Taurus', 'RCX101', '12', 1, 'S');
