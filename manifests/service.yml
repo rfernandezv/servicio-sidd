@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "kubernetesrfv-d50a"
+    labels:
+        app: "kubernetesrfv-d50a"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    selector:
+        app: "kubernetesrfv-d50a"
