@@ -1,0 +1,50 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: containerrfv.azurecr.io
+        username: ${{ secrets.acr_containerrfv_username }}
+        password: ${{ secrets.acr_containerrfv_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/servicio-sidd" -f  "sidd" -t containerrfv.azurecr.io/kubernetesrfv:${{ github.sha }}
+        docker push containerrfv.azurecr.io/kubernetesrfv:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_kubernetesrfv_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep kubernetesrfv9281 | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace kubernetesrfv9281`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: kubernetesrfv9281
+        container-registry-url: containerrfv.azurecr.io
+        container-registry-username: ${{ secrets.acr_containerrfv_username }}
+        container-registry-password: ${{ secrets.acr_containerrfv_password }}
+        secret-name: kubernetesrfdockerauth
+       
+    - uses: azure/k8s-deploy@v1.2
+      with:
+        namespace: kubernetesrfv9281
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          containerrfv.azurecr.io/kubernetesrfv:${{ github.sha }}
+        imagepullsecrets: |
+          kubernetesrfdockerauth
