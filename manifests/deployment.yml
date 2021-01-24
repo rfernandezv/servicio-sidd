@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rfvimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rfvimage
+  template:
+    metadata:
+      labels:
+        app: rfvimage 
+    spec:
+      containers:
+        - name: rfvimage 
+          image: containerrfv.azurecr.io/rfvimage
+          ports:
+          - containerPort: 80
