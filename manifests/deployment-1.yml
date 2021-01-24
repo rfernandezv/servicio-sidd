@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetesrfv-a865"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetesrfv-a865"
+  template:
+    metadata:
+      labels:
+        app: "kubernetesrfv-a865"
+    spec:
+      containers:
+        - name: "kubernetesrfv-a865"
+          image: "containerrfv.azurecr.io/kubernetesrfv"
+          ports:
+          - containerPort: 80
